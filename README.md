@@ -1,2 +1,2 @@
-# Zense_Hacknite
+# BuzzNest
 Web Dev project for Hacknite
