@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 
+
 ::-webkit-scrollbar {
   display: none;
    -ms-overflow-style: none;  /* IE and Edge */
@@ -79,6 +80,7 @@ z-index: 49;
     --color-ascent2: 89 91 100;
     --color-blue: 6 90 216;
     --color-white: 255 255 255;
+    --color-yellow: 243 182 36;
 
   }
   /* //15 23 42  21 30 49*/
@@ -91,5 +93,6 @@ z-index: 49;
     --color-blue: 6 90 216;
     /* //16 176 255; */
     --color-white: 255 255 255;
+    --color-yellow: 243 182 36;
   }
 }
