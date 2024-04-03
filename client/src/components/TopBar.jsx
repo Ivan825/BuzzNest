@@ -31,10 +31,10 @@ const TopBar = () => {
   const handleSearch = async (data) => { };
 
   return (
-    <div className='topbar w-full flex items-center justify-between py-3 md:py-6 px-4 bg-primary'>
+    <div className='topbar w-full flex items-center justify-between py-3 md:py-6 px-4 bg-primary border-b border-x rounded-2xl border-yellow'>
       <Link to='/' className='flex gap-2 items-center'>
 
-        <span className='text-xl md:text-2xl text-yellow font-semibold'>
+        <span className='text-xl md:text-3xl text-yellow font-semibold font-lobster'>
           BuzzNest
         </span>
       </Link>
@@ -46,13 +46,13 @@ const TopBar = () => {
         <div className="flex items-center ">
           <TextInput
             placeholder='Search...'
-            styles='w-[18rem] lg:w-[38rem] border-yellow rounded-l-full py-3 h-12'
+            styles='w-[18rem] lg:w-[38rem] border-yellow rounded-l-full py-3  font-poiret'
             register={register("search")}
           />
           <CustomButton
             iconRight={<IoMdSearch  />}
             type='submit'
-            containerStyles='bg-yellow border-yellow text-black px-6 <py-3></py-3> rounded-r-full h-12'
+            containerStyles='bg-yellow  text-black px-6 <py-3></py-3> rounded-r-full h-12 '
           />
         </div>
       </form>
@@ -72,7 +72,7 @@ const TopBar = () => {
           <CustomButton
             onClick={() => dispatch(Logout())}
             title='Log Out'
-            containerStyles='text-sm text-ascent-1 px-4 md:px-6 py-1 md:py-2 border border-yellow rounded-full hover:scale-110 duration-300'
+            containerStyles='text-md text-ascent-1 px-4 md:px-6 py-1 md:py-2 border border-yellow rounded-full hover:scale-110 duration-300 font-poiret'
           />
         </div>
       </div>

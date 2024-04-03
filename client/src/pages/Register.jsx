@@ -26,17 +26,17 @@ const Register = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className='bg-hero w-full h-[100vh] flex items-center justify-center p-6'>
-      <div className='w-full md:w-2/3 h-fit lg:h-full 2xl:h-5/6 py-8 lg:py-0 flex flex-row-reverse bg-primary rounded-xl overflow-hidden shadow-xl'>
+    <div className='anibag w-full h-[100vh] flex items-center justify-center p-6'>
+      <div className='w-full md:w-2/3 h-fit lg:h-full 2xl:h-5/6 py-8 lg:py-0 flex flex-row-reverse bg-primary rounded-xl overflow-hidden shadow-xl font-poiret'>
         {/* LEFT */}
         <div className='w-full lg:w-1/2 h-full p-10 2xl:px-20 flex flex-col justify-center '>
           <div className='w-full flex gap-2 items-center mb-6'>
-            <span className='text-4xl text-yellow font-semibold ' >
+            <span className='text-4xl text-yellow font-semibold font-lobster' >
               Buzz Nest
             </span>
           </div>
 
-          <p className='text-ascent-1 text-base font-semibold'>
+          <p className='text-ascent-1 text-2xl font-semibold'>
             Create your account
           </p>
 
@@ -87,7 +87,7 @@ const Register = () => {
                 label='Password'
                 placeholder='Password'
                 type='password'
-                styles='w-full border-yellow'
+                styles='w-full border-yellow text-md'
                 register={register("password", {
                   required: "Password is required!",
                 })}
@@ -133,13 +133,13 @@ const Register = () => {
             ) : (
               <CustomButton
                 type='submit'
-                containerStyles={`inline-flex justify-center rounded-md bg-yellow px-8 py-3 text-sm font-medium text-black outline-none`}
+                containerStyles={`inline-flex justify-center rounded-md bg-yellow px-8 py-3 text-md font-medium text-black outline-none`}
                 title='Create Account'
               />
             )}
           </form>
 
-          <p className='text-ascent-2 text-sm text-center'>
+          <p className='text-ascent-2 text-md text-center'>
             Already has an account?{" "}
             <Link
               to='/login'
@@ -151,7 +151,7 @@ const Register = () => {
         </div>
         {/* RIGHT */}
         <div className='hidden w-1/2 h-full lg:flex flex-col items-center justify-center bg-yellow'>
-        <div className='relative w-full flex items-center justify-center'>
+        <div className='relative w-full flex items-center justify-center font'>
             <img
               src={logobee}
               alt='Bg Image'
@@ -159,12 +159,15 @@ const Register = () => {
             />
           </div>
 
-          <div className='mt-16 text-center'>
-            <p className='text-black text-base font-bold font-mono '>
-              BUZZNEST
+          <div className='mt-16 text-center '>
+            <p className='text-black text-2xl font-bold font-lobster '>
+              BuzzNest
             </p>
-            <span className='text-sm text-black/80 font-bold font-mono'>
-            Ignite your social world,one buzz at a time
+            <div className=' text-black text-2xl  font-bold font-poiret'>
+              Ignite your social world
+            </div>
+            <span className=' text-black text-2xl font-bold font-poiret'>
+              one buzz at a time
             </span>
           </div>
         </div>

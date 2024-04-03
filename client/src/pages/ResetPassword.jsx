@@ -18,11 +18,11 @@ const ResetPassword = () => {
   const onSubmit = async (data) => {};
 
   return (
-    <div className='w-full h-[100vh] bg-hero flex items-center justify-center p-6'>
-      <div className='bg-primary w-full md:w-1/3 2xl:w-1/4 px-6 py-8 shadow-md rounded-lg'>
-        <p className='text-ascent-1 text-lg font-semibold'>Email Address</p>
+    <div className='w-full h-[100vh] anibag flex items-center justify-center p-6'>
+      <div className='bg-primary w-full md:w-1/3 2xl:w-1/4 px-6 py-8 shadow-md rounded-lg font-poiret'>
+        <p className='text-ascent-1 text-2xl font-semibold'>Email Address</p>
 
-        <span className='text-sm text-ascent-2'>
+        <span className='text-md text-ascent-2'>
           Enter email address used during registration
         </span>
 
@@ -59,7 +59,7 @@ const ResetPassword = () => {
           ) : (
             <CustomButton
               type='submit'
-              containerStyles={`inline-flex justify-center rounded-md bg-yellow px-8 py-3 text-sm font-medium text-white outline-none`}
+              containerStyles={`inline-flex justify-center rounded-md bg-yellow px-8 py-3 text-md font-medium text-black outline-none`}
               title='Submit'
             />
           )}

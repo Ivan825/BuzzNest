@@ -28,6 +28,13 @@ module.exports = {
     extend: {
       backgroundImage:{
         'hero':  "url('./assets/backfinal.jpeg')",
+      },
+      fontFamily:{
+        'lobster':['Lobster','sans-serif'],
+        'edu':["Edu NSW ACT Foundation"],
+        'Rowdies':['Rowdies'],
+        'sriracha':['Sriracha'],
+        'poiret':['Poiret One'],
       }
     },
   },

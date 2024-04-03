@@ -21,7 +21,7 @@ const ProfileCard = ({ user }) => {
 
   return (
     <div>
-      <div className='w-full bg-primary flex flex-col items-center shadow-sm rounded-xl px-6 py-4 '>
+      <div className='w-full bg-primary flex flex-col items-center shadow-sm rounded-xl px-6 py-4 font-poiret text-md'>
         <div className='w-full flex items-center justify-between border-b pb-5 border-yellow'>
           <Link to={"/profile/" + user?._id} className='flex gap-2'>
             <img

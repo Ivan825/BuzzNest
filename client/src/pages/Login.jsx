@@ -11,6 +11,7 @@ import { BgImage } from "../assets";
 import { logobee, } from '../assets';
 
 
+
 function Login() {
   const {register,handleSubmit,formState:{errors }}= useForm( {mode: 'onChange'});
   const [errMsg,setErrMsg]= useState('');
@@ -18,18 +19,18 @@ function Login() {
   const dispatch= useDispatch();
   const onSubmit = async (data) => {};
   return (
-    <div className='bg-hero w-full h-[100vh] flex items-center justify-center p-6 '>
-      <div className='w-full md:w-2/3 h-fit lg:h-full 2xl:h-5/6 py-8 lg:py-0 flex bg-primary rounded-xl overflow-hidden shadow-xl'>
+    <div className='anibag w-full h-[100vh] flex items-center justify-center p-6 '>
+      <div className='w-full md:w-2/3 h-fit lg:h-full 2xl:h-5/6 py-8 lg:py-0 flex bg-primary rounded-xl overflow-hidden shadow-xl font-poiret'>
         {/* Left */}
         <div className='w-full lg:w=1/2 h-full p-10 2xl:px-20 flex flex-col justify-center'>
           <div className='w-full flex gap-2 items-center mb-6'>
             
-            <span className='text-4xl text-yellow font-semibold' >BuzzNest</span>
+            <span className='text-4xl text-yellow font-semibold font-lobster' >BuzzNest</span>
           </div>
-          <p className='text-ascent-1 text-base font-semibold'>
+          <p className='text-ascent-1 text-xl font-semibold'>
             Log in to your account
           </p>
-          <span className='text-sm mt-2 text-ascent-2'>Welcome back</span>
+          <span className='text-md mt-2 text-ascent-2'>Welcome back</span>
           <form className='py-8 flex flex-col gap-5'onSubmit={handleSubmit(onSubmit)} >
             <TextInput name='email'
               placeholder='email@example.com'
@@ -53,7 +54,7 @@ function Login() {
               })}
               error={errors.password ? errors.password?.message : ""}
             />
-            <Link to='/reset-password'className='text-sm text-right text-yellow font-semibold ' >forgot password</Link>
+            <Link to='/reset-password'className='text-md text-right text-yellow font-semibold ' >forgot password</Link>
             {
               errMsg?.message &&(
                 <span className={`text-sm ${
@@ -71,7 +72,7 @@ function Login() {
               title='Login' />
             }
           </form>
-          <p className='text-ascent-2 text-sm text-center'>
+          <p className='text-ascent-2 text-md text-center'>
             Don't have an account?
             <Link
               to='/register'
@@ -92,11 +93,14 @@ function Login() {
           </div>
 
           <div className='mt-16 text-center'>
-            <p className='text-black text-base font-bold font-mono '>
-              BUZZNEST
+            <p className='text-black text-4xl font-bold font-lobster  '>
+              BuzzNest
             </p>
-            <span className=' text-black/80 font-bold font-mono'>
-              Ignite your social world,one buzz at a time
+            <div className=' text-black text-2xl  font-bold font-poiret'>
+              Ignite your social world
+            </div>
+            <span className=' text-black text-2xl font-bold font-poiret'>
+              one buzz at a time
             </span>
           </div>
         </div>

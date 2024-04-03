@@ -26,6 +26,7 @@ const Home = () => {
   const [file, setFile] = useState(null);
   const [posting, setPosting] = useState(false);
   const [loading, setLoading] = useState(false);
+  const {theme}= useSelector((state)=>state.theme);
 
   const {
     register,
@@ -37,7 +38,7 @@ const Home = () => {
 
   return (
     <>
-      <div className='w-full px-0 lg:px-10 pb-20 2xl:px-40 bg-bgColor lg:rounded-lg h-screen overflow-hidden'>
+      <div  className=" w-full px-0 lg:px-10 pb-20 2xl:px-40 bg-bgColor lg:rounded-lg h-screen overflow-hidden">
         <TopBar />
 
         <div className='w-full flex gap-2 lg:gap-4 pt-5 pb-10 h-full'>
@@ -48,7 +49,7 @@ const Home = () => {
           </div>
 
           {/* CENTER */}
-          <div className='flex-1 h-full px-4 flex flex-col gap-6 overflow-y-auto rounded-lg  '>
+          <div className='flex-1 h-full px-4 flex flex-col gap-6 overflow-y-auto rounded-lg  font-poiret'>
             <form
               onSubmit={handleSubmit(handlePostSubmit)}
               className='bg-primary px-4 rounded-lg '
@@ -60,7 +61,7 @@ const Home = () => {
                   className='w-14 h-14 rounded-full object-cover'
                 />
                 <TextInput
-                  styles='w-full rounded-full py-5 border-yellow'
+                  styles='w-full rounded-full py-5 border-yellow '
                   placeholder="What's the latest buzz...."
                   name='description'
                   register={register("description", {
@@ -167,7 +168,7 @@ const Home = () => {
           {/* RIGJT */}
           <div className='hidden w-1/4 h-full lg:flex flex-col gap-8 overflow-y-auto'>
             {/* FRIEND REQUEST */}
-            <div className='w-full bg-primary shadow-sm rounded-lg px-6 py-5'>
+            <div className='w-full bg-primary shadow-sm rounded-lg px-6 py-5 font-poiret'>
               <div className='flex items-center justify-between text-xl text-ascent-1 pb-2 border-b border-yellow'>
                 <span> Want to join your Hive</span>
                 <span>{friendRequest?.length}</span>
@@ -186,7 +187,7 @@ const Home = () => {
                         className='w-10 h-10 object-cover rounded-full'
                       />
                       <div className='flex-1'>
-                        <p className='text-base font-medium text-ascent-1'>
+                        <p className='text-base font-medium text-ascent-1 '>
                           {from?.firstName} {from?.lastName}
                         </p>
                         <span className='text-sm text-ascent-2'>
@@ -198,11 +199,11 @@ const Home = () => {
                     <div className='flex gap-1'>
                       <CustomButton
                         title='Accept'
-                        containerStyles='bg-yellow text-xs text-black px-1.5 py-1 rounded-full'
+                        containerStyles='bg-yellow text-md text-black px-1.5 py-1 rounded-full'
                       />
                       <CustomButton
                         title='Deny'
-                        containerStyles='border border-[#666] text-xs text-ascent-1 px-1.5 py-1 rounded-full'
+                        containerStyles='border border-[#666] text-md text-ascent-1 px-1.5 py-1 rounded-full'
                       />
                     </div>
                   </div>
@@ -211,7 +212,7 @@ const Home = () => {
             </div>
 
             {/* SUGGESTED FRIENDS */}
-            <div className='w-full bg-primary shadow-sm rounded-lg px-5 py-5'>
+            <div className='w-full bg-primary shadow-sm rounded-lg px-5 py-5 font-poiret'>
               <div className='flex items-center justify-between text-lg text-ascent-1 border-b border-yellow'>
                 <span>Fellow Bees</span>
               </div>
@@ -232,10 +233,10 @@ const Home = () => {
                         className='w-10 h-10 object-cover rounded-full'
                       />
                       <div className='flex-1 '>
-                        <p className='text-base font-medium text-ascent-1'>
+                        <p className='text-lg font-medium text-ascent-1'>
                           {friend?.firstName} {friend?.lastName}
                         </p>
-                        <span className='text-sm text-ascent-2'>
+                        <span className='text-md text-ascent-2'>
                           {friend?.profession ?? "No Profession"}
                         </span>
                       </div>
@@ -243,7 +244,7 @@ const Home = () => {
 
                     <div className='flex gap-1'>
                       <button
-                        className='bg-[#0444a430] text-sm text-white p-1 rounded'
+                        className='bg-[#0444a430] text-md text-white p-1 rounded'
                         onClick={() => {}}
                       >
                         <BsPersonFillAdd size={20} className='text-yellow' />

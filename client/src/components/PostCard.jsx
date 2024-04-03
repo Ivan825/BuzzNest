@@ -135,7 +135,7 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
   const handleLike = async () => {};
 
   return (
-    <div className='mb-2 bg-primary p-4 rounded-xl  hover:scale-105 duration-500'>
+    <div className='mb-2 bg-primary p-4 rounded-xl  hover:scale-105 duration-500 '>
       <div className='flex gap-3 items-center mb-2 border-b pb-2 border-yellow'>
         <Link to={"/profile/" + post?.userId?._id}>
           <img
@@ -269,7 +269,7 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
                   <div className='mt-2 flex gap-6'>
                     <p className='flex gap-2 items-center text-base text-ascent-2 cursor-pointer'>
                       {comment?.likes?.includes(user?._id) ? (
-                        <BiSolidLike size={20} color='blue' />
+                        <BiSolidLike size={20} color='yellow' />
                       ) : (
                         <BiLike size={20} />
                       )}
