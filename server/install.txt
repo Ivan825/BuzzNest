@@ -1,0 +1,1 @@
+npm  i bcryptjs body-parser cors dotenv express helmet jsonwebtoken mongoose morgan nodemailer nodemon uuid
