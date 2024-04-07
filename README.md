@@ -126,6 +126,7 @@ Develop a user-centric solution for a locality-based app that encourages communi
 - Recommendations to add friends based on your current friends.
 - Making our own database.
 - To make the site secure and free from attacks.
+- Will activate the social profile section.
 
 ## Applications
 
