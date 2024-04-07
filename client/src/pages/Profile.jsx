@@ -20,7 +20,7 @@ const Profile = () => {
   const [loading, setLoading] = useState(false);
   const {theme}= useSelector( (state)=> state.theme );
 
-  const uri= "http://localhost:8800/posts/get-user-post/" + id;
+  const uri= "https://buzznest-3.onrender.com/posts/get-user-post/" + id;
 
   const getUser= async()=> {
     const res= await getUserInfo(user?.token, id);
