@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { SetPosts } from '../redux/postSlice';
 
-const API_URL= "http://localhost:8800";
+const API_URL= "https://buzznest-3.onrender.com";
 
 export const API= axios.create({
     baseURL:API_URL,
@@ -49,7 +49,7 @@ export const handleFileUpload= async(uploadFile)=>{
 export const fetchPosts= async(token, dispatch, uri, data) => {
     try {
         const res= await apiRequest({
-            url: uri|| 'http://localhost:8800/posts',
+            url: uri|| 'https://buzznest-3.onrender.com/posts',
             token:token,
             method:"POST",
             data: data || {}
@@ -79,7 +79,7 @@ export const likePost= async({uri,token})=>{
 export const deletePost= async(id,token)=> {
     try{
         const res= await apiRequest({
-            url:"http://localhost:8800/posts/"+ id , 
+            url:"https://buzznest-3.onrender.com/posts/"+ id , 
             token:token,
             method:'DELETE'
         });
@@ -91,7 +91,7 @@ export const deletePost= async(id,token)=> {
 
 export const getUserInfo= async(token,id)=>{
     try{
-        const uri= id=== undefined? "http://localhost:8800/users/get-user":"http://localhost:8800/users/get-user/"+id;
+        const uri= id=== undefined? "https://buzznest-3.onrender.com/users/get-user":"https://buzznest-3.onrender.com/users/get-user/"+id;
         const res= await apiRequest({
             url: uri,
             token: token,
@@ -112,7 +112,7 @@ export const getUserInfo= async(token,id)=>{
 export const sendFriendRequest= async(token,id)=>{
     try {
         const res= await apiRequest({
-            url:"http://localhost:8800/users/friend-request",
+            url:"https://buzznest-3.onrender.com/users/friend-request",
             token:token,
             method:"POST",
             data:{ requestTo: id },
@@ -128,7 +128,7 @@ export const sendFriendRequest= async(token,id)=>{
 export const viewUserProfile= async(token,id)=>{
     try{
         const res= await apiRequest({
-            url: "http://localhost:8800/users/profile-view",
+            url: "https://buzznest-3.onrender.com/users/profile-view",
             token:token,
             method:"POST",
             data: {id},
