@@ -18,7 +18,7 @@ function Login() {
     setIsSubmitting(true);
     try {
       const res= await apiRequest({
-        url: 'http://localhost:8800/auth/login',
+        url: 'https://buzznest-3.onrender.com/auth/login',
         data: data,
         method: 'POST',
       });
