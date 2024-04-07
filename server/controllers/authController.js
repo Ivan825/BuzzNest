@@ -1,5 +1,6 @@
 import Users from "../models/userModel.js";
 import { compareString, createJWT, hashString } from "../utils/index.js";
+import { sendVerificationEmail } from "../utils/sendEmail.js";
 
 export const register = async (req, res, next) => {
   const { firstName, lastName, email, password } = req.body;
@@ -27,7 +28,8 @@ export const register = async (req, res, next) => {
       password: hashedPassword,
     });
 
-    //sendVerificationEmail(user, res);     !!!!! make util sendverif
+    //send email verification to user
+    sendVerificationEmail(user, res);
   } catch (error) {
     console.log(error);
     res.status(404).json({ message: error.message });
@@ -36,12 +38,14 @@ export const register = async (req, res, next) => {
 
 export const login = async (req, res, next) => {
   const { email, password } = req.body;
+
   try {
     //validation
     if (!email || !password) {
       next("Please Provide User Credentials");
       return;
     }
+
     // find user by email
     const user = await Users.findOne({ email }).select("+password").populate({
       path: "friends",
@@ -59,6 +63,7 @@ export const login = async (req, res, next) => {
       );
       return;
     }
+
     // compare password
     const isMatch = await compareString(password, user?.password);
 
@@ -66,8 +71,11 @@ export const login = async (req, res, next) => {
       next("Invalid email or password");
       return;
     }
+
     user.password = undefined;
-    const token = createJWT(user?._id);
+
+    const token = createJWT(user._id,res);
+
     res.status(201).json({
       success: true,
       message: "Login successfully",
