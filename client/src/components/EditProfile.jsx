@@ -34,7 +34,7 @@ const EditProfile = () => {
       const {firstName ,lastName , location, profession}= data;
 
       const res= await apiRequest({
-        url:"http://localhost:8800/users/update-user",
+        url:"https://buzznest-3.onrender.com/users/update-user",
         data: {
           firstName,
           lastName,
