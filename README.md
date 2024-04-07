@@ -1,7 +1,7 @@
 
 # BuzzNest
 
-BuzzNest is a social media web application inspired by the themes and motifs of the "Bee Movie". It provides users with a platform to connect, share, and engage in a buzzing community. This project utilizes a stack of modern technologies including React.js, Tailwind CSS, Axios, Redux, React Hooks, Forms, and React Icons for the frontend, while the backend is powered by bcryptjs, body-parser, dotenv, Express.js, JSON Web Token (jsonwebtoken), Mongoose, Morgan, Nodemailer, Nodemon, and UUID.
+BuzzNest is a social media web application inspired by the themes and motifs of the "Bee Movie". It provides users with a platform to connect, share, and engage in a buzzing community. This project utilizes a stack of modern technologies including React.js, Tailwind CSS, Axios, Redux, React Hooks, Forms, and React Icons for the frontend, while the backend is powered by bcryptjs, body-parser, dotenv, Express.js, JSON Web Token (jsonwebtoken), Mongoose, Morgan, Nodemailer, Nodemon, and UUID. (https://buzz-nest.netlify.app)
 
 
 ## Features
