@@ -180,4 +180,4 @@ BuzzNest can also be used for social impact initiatives, such as raising awarene
 - [Ivan_Bhargava](ivan.bhargava@iiitb.ac.in)
 - [Nirbhay_Sharma](nirbhay.sharma@iiitb.ac.in)
 ### Project
-- Project Link: [https://github.com/NIKS-IIITB/BuzzNest](https://github.com/NirbhaySharma504/BuzzNest)
+- Project Link: [https://github.com/NIKS-IIITB/BuzzNest](https://github.com/Ivan825/BuzzNest)
