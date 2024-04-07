@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { user } from "../assets/data";
-
+import { useAuthContext } from "../context/AuthContext";
 const initialState = {
-  user: JSON.parse(window?.localStorage.getItem("user")) ?? user,
+  user: JSON.parse(window?.localStorage.getItem("user")) ?? {},
   edit: false,
 };
 

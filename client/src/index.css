@@ -3,20 +3,46 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@400..700&family=Lobster&family=Poiret+One&family=Rowdies:wght@300&family=Sriracha&display=swap');
 
+.shake {
+	animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) 0.2s both;
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+
+@keyframes shake {
+	10%,
+	90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+
+	20%,
+	80% {
+		transform: translate3d(2px, 0, 0);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+
+	40%,
+	60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
 
 ::-webkit-scrollbar {
   display: none;
    -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;
 }
-
 .topbar{
 position: sticky;
 top: 0px;
 z-index: 49;
 }
-
-
 .dots-container {
   display: flex;
   align-items: center;
@@ -25,7 +51,6 @@ z-index: 49;
   width: 100%;
   margin-bottom: 5px;
 }
-
 .dot {
   height: 12px;
   width: 12px;
@@ -34,23 +59,18 @@ z-index: 49;
   background-color: #fff;
   animation: pulse 1.5s infinite ease-in-out;
 }
-
 .dot:last-child {
   margin-right: 0;
 }
-
 .dot:nth-child(1) {
   animation-delay: -0.3s;
 }
-
 .dot:nth-child(2) {
   animation-delay: -0.1s;
 }
-
 .dot:nth-child(3) {
   animation-delay: 0.1s;
 }
-
 @keyframes pulse {
   0% {
     transform: scale(0.8);
@@ -60,21 +80,20 @@ z-index: 49;
 
   50% {
     transform: scale(1.2);
-    background-color: #4b79e4;
+    background-color: yellow;
     box-shadow: 0 0 0 10px rgba(178, 212, 252, 0);
   }
 
   100% {
     transform: scale(0.8);
-    background-color: #2584f8;
+    background-color:yellow;
     box-shadow: 0 0 0 0 rgba(178, 212, 252, 0.7);
   }
 }
-
 @layer base {
   :root {
-    --color-bg: 227 227 227;
-    --color-primary: 245 245 247;
+    --color-bg: 227 227 227 ;
+    --color-primary: 245 245 247 ;
     --color-secondary:255 255 255;
     --color-ascent1: 0 0 0;
     --color-ascent2: 89 91 100;
@@ -85,22 +104,17 @@ z-index: 49;
   }
   /* //15 23 42  21 30 49*/
   [data-theme="dark"] {
-     --color-bg: 12 12 12;
-     --color-primary: 31 31 31;
-    --color-secondary: 47 45 48;
-    --color-ascent1: 255 255 255;
-    --color-ascent2: 164 161 162;
+     --color-bg: 12 12 12 ;
+     --color-primary: 31 31 31 ;
+    --color-secondary: 47 45 48 ;
+    --color-ascent1: 255 255 255 ;
+    --color-ascent2: 164 161 162 ;
     --color-blue: 6 90 216;
     /* //16 176 255; */
     --color-white: 255 255 255;
-    --color-yellow: 243 182 36;
+    --color-yellow: 243 182 36 ;
   }
 }
-@tailwind base;
-@tailwind components;
-
-@tailwind utilities;
-
 .anibag {
   --s: 25vmin;
   --p: calc(var(--s) / 2);
@@ -127,7 +141,6 @@ z-index: 49;
     color var(--d) var(--e) infinite,
     position var(--d) var(--e) infinite;
 }
-
 @keyframes color {
   0%, 25% {
     --bg: var(--c3);
@@ -142,7 +155,6 @@ z-index: 49;
     --bg: var(--c2);
   }
 }
-
 @keyframes position {
   0% {
     background-position: 
@@ -196,7 +208,6 @@ z-index: 49;
     conic-gradient(from 90deg at 20% 20%, var(--c2) 25%, var(--c1) 0) 0 0/var(--s) var(--s);
   animation: m 3s infinite;
 }
-
 @keyframes m {
   0% {
     background-position: 
@@ -234,10 +245,6 @@ z-index: 49;
       calc(-2.3*var(--s)) calc(1.7*var(--s)),0 0;
   }
 }
-
-
-
-
 .animated-background-d {
   --s: 100px; /* control the size */
   --c1: #000000;
@@ -254,7 +261,6 @@ z-index: 49;
     conic-gradient(from 90deg at 20% 20%, var(--c2) 25%, var(--c1) 0) 0 0/var(--s) var(--s);
   animation: m 6s infinite;
 }
-
 @keyframes m {
   0% {
     background-position: 

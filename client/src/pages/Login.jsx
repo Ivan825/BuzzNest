@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
-import {TbSocial} from 'react-icons/tb';
 import { TextInput,Loading,CustomButton } from '../components';
 import {useForm} from 'react-hook-form';
 import {Link} from 'react-router-dom';
 import {useDispatch} from 'react-redux';
-import { BsShare } from "react-icons/bs";
-import { AiOutlineInteraction } from "react-icons/ai";
-import { ImConnection } from "react-icons/im";
-import { BgImage } from "../assets";
 import { logobee, } from '../assets';
+import { apiRequest } from '../utils';
+import { UserLogin } from '../redux/userSlice';
 
 
 
@@ -17,7 +14,29 @@ function Login() {
   const [errMsg,setErrMsg]= useState('');
   const [isSubmitting, setIsSubmitting]= useState(false);
   const dispatch= useDispatch();
-  const onSubmit = async (data) => {};
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    try {
+      const res= await apiRequest({
+        url: 'http://localhost:8800/auth/login',
+        data: data,
+        method: 'POST',
+      });
+      if(res?.status==="failed"){
+        setErrMsg(res);
+      } else{
+        setErrMsg("");
+        const newData= {token: res?.token, ...res?.user};
+        localStorage.setItem("token",JSON.stringify(newData.token));
+        dispatch(UserLogin(newData));
+        window.location.replace("/");
+      }
+      setIsSubmitting(false);
+    } catch (error) {
+      console.log(error);
+      setIsSubmitting(false);
+    }
+  };
   return (
     <div className='anibag w-full h-[100vh] flex items-center justify-center p-6 '>
       <div className='w-full md:w-2/3 h-fit lg:h-full 2xl:h-5/6 py-8 lg:py-0 flex bg-primary rounded-xl overflow-hidden shadow-xl font-poiret'>

@@ -1,7 +1,10 @@
 import { Outlet, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { About, Home, Login, Profile, Register, ResetPassword } from "./pages";
+import { About, ChatPage, Home, Login, Profile, Register, ResetPassword } from "./pages";
+import axios from 'axios';
 
+// Enable sending cookies with every request
+axios.defaults.withCredentials = true;
 function Layout() {
   const { user } = useSelector((state) => state.user);
   const location = useLocation();
@@ -22,6 +25,7 @@ function App() {
         <Route element={<Layout />}>
           <Route path='/' element={<Home />} />
           <Route path='/profile/:id?' element={<Profile />} />
+          <Route path="/chat" element={<ChatPage />} />
         </Route>
 
         <Route path='/register' element={<Register />} />

@@ -11,6 +11,11 @@ import { HiMiniQuestionMarkCircle } from "react-icons/hi2";
 import { SetTheme } from "../redux/theme";
 import { Logout } from "../redux/userSlice";
 import { IoMdSearch } from "react-icons/io";
+import { fetchPosts } from "../utils";
+import {Notification} from "./index"
+import addNotification from'react-push-notification';
+import { logobee, } from '../assets';
+import { IoMdChatbubbles } from "react-icons/io";
 
 const TopBar = () => {
   const { theme } = useSelector((state) => state.theme);
@@ -28,10 +33,24 @@ const TopBar = () => {
     dispatch(SetTheme(themeValue));
   };
 
-  const handleSearch = async (data) => { };
+  const handleSearch = async (data) => { 
+    await fetchPosts(user.token,dispatch,"",data);
+  };
+  const sendNotif= (message="")=>{
+    console.log("runs");
+    addNotification({
+      title:"Buzznest",
+      message:message,
+      duration:4000,
+      icon:logobee,
+      native:true,
+
+    });
+
+  }
 
   return (
-    <div className='topbar w-full flex items-center justify-between py-3 md:py-6 px-4 bg-primary border-b border-x rounded-2xl border-yellow'>
+    <div className='topbar w-full flex items-center justify-between py-3 md:py-6 px-4 bg-primary  rounded-2xl '>
       <Link to='/' className='flex gap-2 items-center'>
 
         <span className='text-xl md:text-3xl text-yellow font-semibold font-lobster'>
@@ -61,11 +80,12 @@ const TopBar = () => {
 
       {/* ICONS */}
       <div className='flex gap-4 items-center text-ascent-1 text-md md:text-xl'>
-        <button onClick={() => handleTheme()}>
+        <button onClick={() => {handleTheme();sendNotif("Theme Changed");}}>
           {theme ? <BsMoon className="hover:scale-150 duration-300" /> : <BsSunFill />}
         </button>
         <div className='hidden lg:flex'>
-          <Link to={'/About'} ><HiMiniQuestionMarkCircle className="hover:scale-150 duration-300" /></Link>
+          <Link to={'/About'} ><HiMiniQuestionMarkCircle className="hover:scale-150 duration-300 mr-4" /></Link>
+          <Link to={'/chat'} ><IoMdChatbubbles className="hover:scale-150 duration-300" /></Link>
         </div>
 
         <div>

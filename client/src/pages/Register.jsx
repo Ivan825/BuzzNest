@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
-import { TbSocial } from "react-icons/tb";
-import { BsShare } from "react-icons/bs";
-import { AiOutlineInteraction } from "react-icons/ai";
-import { ImConnection } from "react-icons/im";
 import { CustomButton, Loading, TextInput } from "../components";
-import { BgImage,logobee } from "../assets";
+import { logobee } from "../assets";
+import { apiRequest } from "../utils";
 
 const Register = () => {
+  const [errMsg, setErrMsg] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -19,12 +20,31 @@ const Register = () => {
     mode: "onChange",
   });
 
-  const onSubmit = async (data) => {};
+  const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    try {
+      const res= await apiRequest({
+        url:'http://localhost:8800/auth/register',
+        data:data,
+        method:'POST'
+      });
+     
+      if(res?.status=== "failed"){
+        setErrMsg(res);
+      } else{
+        setErrMsg(res);
+        setTimeout(()=>{
+          window.location.replace("/login");
+        },5000);
+      }
+      setIsSubmitting(false);
+    } catch (error) {
+      console.log(error);
+      setIsSubmitting(false);
+    }
+  };
 
-  const [errMsg, setErrMsg] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const dispatch = useDispatch();
-
+  
   return (
     <div className='anibag w-full h-[100vh] flex items-center justify-center p-6'>
       <div className='w-full md:w-2/3 h-fit lg:h-full 2xl:h-5/6 py-8 lg:py-0 flex flex-row-reverse bg-primary rounded-xl overflow-hidden shadow-xl font-poiret'>
