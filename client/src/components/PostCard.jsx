@@ -13,7 +13,7 @@ import { apiRequest } from "../utils";
 const getPostComments= async (id)=>{
   try {
     const res= await apiRequest({
-      url:"http://localhost:8800/posts/comments/"+ id,
+      url:"https://buzznest-3.onrender.com/posts/comments/"+ id,
       method:"GET",
     });
 
@@ -83,7 +83,7 @@ const CommentForm = ({ user, id, replyAt, getComments }) => {
     setLoading(true);
     setErrMsg("");
     try {
-      const URL= !replyAt? "http://localhost:8800/posts/comment/"+ id: "http://localhost:8800/posts/reply-comment"+id;
+      const URL= !replyAt? "https://buzznest-3.onrender.com/posts/comment/"+ id: "https://buzznest-3.onrender.com/posts/reply-comment"+id;
 
       const newData= {
         comment: data?.comment,
@@ -249,7 +249,7 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
       text-base border-t border-yellow'
       >
         <p className='flex gap-2 items-center text-base cursor-pointer'
-        onClick={()=> handleLike("http://localhost:8800/posts/like/"+ post?._id)} >
+        onClick={()=> handleLike("https://buzznest-3.onrender.com/posts/like/"+ post?._id)} >
           {post?.likes?.includes(user?._id) ? (
             <BiSolidLike size={20} color='dark-yellow' />
           ) : (
@@ -320,7 +320,7 @@ const PostCard = ({ post, user, deletePost, likePost }) => {
                   <div className='mt-2 flex gap-6'>
                     <p className='flex gap-2 items-center text-base text-ascent-2 cursor-pointer'
                     onClick={()=> {
-                      handleLike("http://localhost:8800/posts/like-comment/"+comment?._id);
+                      handleLike("https://buzznest-3.onrender.com/posts/like-comment/"+comment?._id);
                     }}>
                       {comment?.likes?.includes(user?._id) ? (
                         <BiSolidLike size={20} color='yellow' />
