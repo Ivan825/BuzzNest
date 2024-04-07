@@ -24,7 +24,7 @@ const Register = () => {
     setIsSubmitting(true);
     try {
       const res= await apiRequest({
-        url:'http://localhost:8800/auth/register',
+        url:'https://buzznest-3.onrender.com/auth/register',
         data:data,
         method:'POST'
       });
