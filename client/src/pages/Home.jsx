@@ -47,7 +47,7 @@ const Home = () => {
 
       const newData= uri? {...data, image: uri}:data;
       const res= await apiRequest({
-        url:"http://localhost:8800/posts/create-post",
+        url:"https://buzznest-3.onrender.com/posts/create-post",
         data: newData,
         token: user?.token,
         method:"POST"
@@ -90,7 +90,7 @@ const Home = () => {
   const fetchFriendRequests= async()=>{
     try {
       const res= await apiRequest({
-        url:"http://localhost:8800/users/get-friend-request",
+        url:"https://buzznest-3.onrender.com/users/get-friend-request",
         token: user?.token,
         method:"POST",
       });
@@ -103,7 +103,7 @@ const Home = () => {
   const fetchSuggestedFriends= async()=>{
     try {
       const res= await apiRequest({
-        url: "http://localhost:8800/users/suggested-friends",
+        url: "https://buzznest-3.onrender.com/users/suggested-friends",
         token: user?.token,
         method:"POST",
       });
@@ -125,7 +125,7 @@ const Home = () => {
   const acceptFriendRequest= async(id,status)=>{
     try {
       const res= await apiRequest({
-        url:"http://localhost:8800/users/accept-request",
+        url:"https://buzznest-3.onrender.com/users/accept-request",
         token:user?.token,
         method:"POST",
         data: {rid: id,status}
