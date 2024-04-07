@@ -12,7 +12,7 @@ const About = () => {
             <div className='w-full lg:w=1/2 h-full p-10 2xl:px-20 flex flex-col justify-center'>
               <div className='w-full flex gap-2 items-center mb-6'>
                 
-                <span className='text-5xl text-yellow font-semibold' >Our Team</span>
+                <span className='text-5xl text-grell font-semibold' >Our Team</span>
               </div>
               <div className='w-full flex gap-2 items-center mb-6'>
                 
@@ -33,7 +33,7 @@ const About = () => {
               </div>
             </div>
             {/* Right */}
-            <div className='hidden w-1/2 h-full lg:flex flex-col items-center justify-center bg-yellow'>
+            <div className='hidden w-1/2 h-full lg:flex flex-col items-center justify-center bg-grell'>
               <div className='relative w-full flex items-center justify-center'>
                 <img
                   src={logobee}

@@ -6,12 +6,12 @@ const FriendsCard = ({ friends }) => {
   return (
     <div>
       <div className='w-full bg-primary shadow-sm rounded-lg px-6 py-5'>
-        <div className='flex items-center justify-between text-ascent-1 pb-2 border-b border-yellow font-poiret text-md'>
+        <div className='flex items-center justify-between text-ascent-1 pb-2 border-b border-yellow font-enriqueta text-md'>
           <span> Friends</span>
           <span>{friends?.length}</span>
         </div>
 
-        <div className='w-full flex flex-col gap-4 pt-4 font-poiret text-md'>
+        <div className='w-full flex flex-col gap-4 pt-4 font-enriqueta text-md'>
           {friends?.map((friend) => (
             <Link
               to={"/profile/" + friend?._id}

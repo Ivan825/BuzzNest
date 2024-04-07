@@ -43,7 +43,7 @@ function Login() {
         <div className='w-full lg:w=1/2 h-full p-10 2xl:px-20 flex flex-col justify-center'>
           <div className='w-full flex gap-2 items-center mb-6'>
             
-            <span className='text-4xl text-yellow font-semibold font-lobster' >BuzzNest</span>
+            <span className='text-4xl text-grell font-semibold font-lobster' >BuzzNest</span>
           </div>
           <p className='text-ascent-1 text-xl font-semibold'>
             Log in to your account
@@ -57,7 +57,7 @@ function Login() {
               register={register("email", {
                 required: "Email Address is required",
               })}
-              styles='w-full rounded-full border-yellow'
+              styles='w-full rounded-full border-grell'
               error={errors.email? errors.email.message:""}
               ></TextInput>
                <TextInput
@@ -65,14 +65,14 @@ function Login() {
               label='Password'
               placeholder='Password'
               type='password'
-              styles='w-full rounded-full border-yellow'
+              styles='w-full rounded-full border-grell'
               labelStyle='ml-2'
               register={register("password", {
                 required: "Password is required!",
               })}
               error={errors.password ? errors.password?.message : ""}
             />
-            <Link to='/reset-password'className='text-md text-right text-yellow font-semibold ' >forgot password</Link>
+            <Link to='/reset-password'className='text-md text-right text-grell font-semibold ' >forgot password</Link>
             {
               errMsg?.message &&(
                 <span className={`text-sm ${
@@ -86,7 +86,7 @@ function Login() {
             }
             {
               isSubmitting? <Loading /> :<CustomButton type='submit'
-              containerStyles={`inline-flex justify-center rounded-md bg-yellow px-8 py-3 text-sm font-medium text-black outline-none`}
+              containerStyles={`inline-flex justify-center rounded-md bg-grell px-8 py-3 text-sm font-medium text-black outline-none`}
               title='Login' />
             }
           </form>
@@ -94,14 +94,14 @@ function Login() {
             Don't have an account?
             <Link
               to='/register'
-              className='text-yellow font-semibold ml-2 cursor-pointer '
+              className='text-grell font-semibold ml-2 cursor-pointer '
             >
               Create Account
             </Link>
           </p>
         </div>
         {/* Right */}
-        <div className='hidden w-1/2 h-full lg:flex flex-col items-center justify-center bg-yellow'>
+        <div className='hidden w-1/2 h-full lg:flex flex-col items-center justify-center bg-grell'>
           <div className='relative w-full flex items-center justify-center'>
             <img
               src={logobee}

@@ -165,7 +165,7 @@ const Home = () => {
           </div>
 
           {/* CENTER */}
-          <div className='flex-1 h-full px-4 flex flex-col gap-6 overflow-y-auto rounded-lg  font-poiret'>
+          <div className='flex-1 h-full px-4 flex flex-col gap-6 overflow-y-auto rounded-lg  font-enriqueta'>
             <form
               onSubmit={handleSubmit(handlePostSubmit)}
               className='bg-primary px-4 rounded-lg '
@@ -284,7 +284,7 @@ const Home = () => {
           {/* RIGJT */}
           <div className='hidden w-1/4 h-full lg:flex flex-col gap-8 overflow-y-auto'>
             {/* FRIEND REQUEST */}
-            <div className='w-full bg-primary shadow-sm rounded-lg px-6 py-5 font-poiret'>
+            <div className='w-full bg-primary shadow-sm rounded-lg px-6 py-5 font-enriqueta'>
               <div className='flex items-center justify-between text-xl text-ascent-1 pb-2 border-b border-yellow'>
                 <span> Want to join your Hive</span>
                 <span>{friendRequest?.length}</span>
@@ -330,7 +330,7 @@ const Home = () => {
             </div>
 
             {/* SUGGESTED FRIENDS */}
-            <div className='w-full bg-primary shadow-sm rounded-lg px-5 py-5 font-poiret'>
+            <div className='w-full bg-primary shadow-sm rounded-lg px-5 py-5 font-enriqueta'>
               <div className='flex items-center justify-between text-lg text-ascent-1 border-b border-yellow'>
                 <span>Fellow Bees</span>
               </div>

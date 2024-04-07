@@ -51,7 +51,7 @@ const Register = () => {
         {/* LEFT */}
         <div className='w-full lg:w-1/2 h-full p-10 2xl:px-20 flex flex-col justify-center '>
           <div className='w-full flex gap-2 items-center mb-6'>
-            <span className='text-4xl text-yellow font-semibold font-lobster' >
+            <span className='text-4xl text-grell font-semibold font-lobster' >
               Buzz Nest
             </span>
           </div>
@@ -70,7 +70,7 @@ const Register = () => {
                 label='First Name'
                 placeholder='First Name'
                 type='text'
-                styles='w-full border-yellow'
+                styles='w-full border-grell'
                 register={register("firstName", {
                   required: "First Name is required!",
                 })}
@@ -81,7 +81,7 @@ const Register = () => {
                 label='Last Name'
                 placeholder='Last Name'
                 type='lastName'
-                styles='w-full border-yellow'
+                styles='w-full border-grell'
                 register={register("lastName", {
                   required: "Last Name do no match",
                 })}
@@ -97,7 +97,7 @@ const Register = () => {
               register={register("email", {
                 required: "Email Address is required",
               })}
-              styles='w-full border-yellow'
+              styles='w-full border-grell'
               error={errors.email ? errors.email.message : ""}
             />
 
@@ -107,7 +107,7 @@ const Register = () => {
                 label='Password'
                 placeholder='Password'
                 type='password'
-                styles='w-full border-yellow text-md'
+                styles='w-full border-grell text-md'
                 register={register("password", {
                   required: "Password is required!",
                 })}
@@ -118,7 +118,7 @@ const Register = () => {
                 label='Confirm Password'
                 placeholder='Password'
                 type='password'
-                styles='w-full border-yellow'
+                styles='w-full border-grell'
                 register={register("cPassword", {
                   validate: (value) => {
                     const { password } = getValues();
@@ -153,7 +153,7 @@ const Register = () => {
             ) : (
               <CustomButton
                 type='submit'
-                containerStyles={`inline-flex justify-center rounded-md bg-yellow px-8 py-3 text-md font-medium text-black outline-none`}
+                containerStyles={`inline-flex justify-center rounded-md bg-grell px-8 py-3 text-md font-medium text-black outline-none`}
                 title='Create Account'
               />
             )}
@@ -163,14 +163,14 @@ const Register = () => {
             Already has an account?{" "}
             <Link
               to='/login'
-              className='text-yellow font-semibold ml-2 cursor-pointer'
+              className='text-grell font-semibold ml-2 cursor-pointer'
             >
               Login
             </Link>
           </p>
         </div>
         {/* RIGHT */}
-        <div className='hidden w-1/2 h-full lg:flex flex-col items-center justify-center bg-yellow'>
+        <div className='hidden w-1/2 h-full lg:flex flex-col items-center justify-center bg-grell'>
         <div className='relative w-full flex items-center justify-center font'>
             <img
               src={logobee}
