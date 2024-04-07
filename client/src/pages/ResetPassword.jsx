@@ -20,7 +20,7 @@ const ResetPassword = () => {
     setIsSubmitting(true);
     try {
       const res= await apiRequest({
-        url:"http://localhost:8800/users/request-passwordreset",
+        url:"https://buzznest-3.onrender.com/users/request-passwordreset",
         data: data,
         method:'POST'
       });
