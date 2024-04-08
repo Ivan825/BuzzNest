@@ -46,24 +46,33 @@ export const getPosts = async (req, res, next) => {
       ],
     };
 
-    // Fetch posts from all users except the current user
-    const otherUsersPosts = await Posts.find({
-      userId: { $nin: friends } // Exclude posts from user and user's friends
+    const posts = await Posts.find(search ? searchPostQuery : {})
+      .populate({
+        path: "userId",
+        select: "firstName lastName location profileUrl -password",
+      })
+      .sort({ _id: -1 });
+
+    const friendsPosts = posts?.filter((post) => {
+      return friends.includes(post?.userId?._id.toString());
     });
 
-    // Fetch posts from the current user
-    const currentUserPosts = await Posts.find({ userId });
+    const otherPosts = posts?.filter(
+      (post) => !friends.includes(post?.userId?._id.toString())
+    );
 
-    // Concatenate posts from all users with posts from the current user
-    let allPosts = [...otherUsersPosts, ...currentUserPosts];
+    let postsRes = null;
 
-    // Sort the posts by descending order of their creation
-    allPosts.sort((a, b) => b.createdAt - a.createdAt);
+    if (friendsPosts?.length > 0) {
+      postsRes = search ? friendsPosts : [...friendsPosts, ...otherPosts];
+    } else {
+      postsRes = posts;
+    }
 
     res.status(200).json({
-      success: true,
-      message: "Posts retrieved successfully",
-      data: allPosts,
+      sucess: true,
+      message: "successfully",
+      data: postsRes,
     });
   } catch (error) {
     console.log(error);
