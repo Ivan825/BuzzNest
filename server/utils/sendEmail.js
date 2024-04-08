@@ -92,7 +92,7 @@ export const resetPasswordLink = async (user, res) => {
   const { _id, email } = user;
 
   const token = _id + uuidv4();
-  const link = "https://buzznest-3.onrender.com" + "users/reset-password/" + _id + "/" + token;
+  const link = "https://buzznest-3.onrender.com/" + "users/reset-password/" + _id + "/" + token;
 
   //   mail options
   const mailOptions = {
